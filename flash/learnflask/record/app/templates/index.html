@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Student Record</title>
+    </head>
+    <body>
+	<h1>Welcome WSU School</h1>
+	<p>WSU Engineering students record list</p>
+	{% for category, message in get_flashed_messges(with_category = true) $}
+	<div style="red">
+		{{ message }}
+	</div>
+	{% endfor %}
+	<div>
+	   <form action="{{ request.path }}" method="POST">
+		   <label for = "first_name"> First Name</label><br>
+		   <input type="text" name="first_name"/><br>
+		   <label for="last_name">Last Name</label><br>
+		   <input type="text" name="last_name"/><br>
+		   <label for="department">Department</label><br>
+		   <input type="text" name="department"/><br>
+		   <label for="email">Email Address</label><br>
+		   <input type="text" name="email"/><br>
+		   <label for="Addr">Address</label><br>
+		   <textarea name="Addr"></textarea><br>
+		   <label for="pin">Student Pin</label><br>
+		   <input type="text" name="pin"/><br>
+		   <input type"submit" value="Submit"/>
+	   </form>
+	</div>
+    </body>
+</html>	
